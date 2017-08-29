@@ -4,7 +4,7 @@ This can be a good start for your video marketing strategy.
 
 **Requirements**
 
-- Debian 8 or any other Linux flavour
+- [Debian 8](https://www.debian.org) or any other Linux flavour
 - [ffmpeg](https://www.ffmpeg.org/)
 - [php cli](http://php.net/manual/en/features.commandline.php)
 - [Python Pip](https://pypi.python.org/pypi/pip)
