@@ -10,8 +10,7 @@ This can be a good start for your video marketing strategy.
 - [Python Pip](https://pypi.python.org/pypi/pip)
 - [gTTS](https://github.com/pndurette/gTTS)
 - [pdftotext](https://linux.die.net/man/1/pdftotext)
-- [Sox](http://sox.sourceforge.net/)
-- [Sox mp3 support](https://superuser.com/questions/421153/how-to-add-a-mp3-handler-to-sox/421168)
+- [Sox](http://sox.sourceforge.net/) with [mp3 support](https://superuser.com/questions/421153/how-to-add-a-mp3-handler-to-sox/421168)
 - [ImageMagick](https://www.imagemagick.org/script/index.php)
 
 **Environment setup**
