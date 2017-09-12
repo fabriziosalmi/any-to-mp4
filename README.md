@@ -17,12 +17,9 @@ This can be a good start for your video marketing strategy.
 
 ```
 apt-get update
-apt-get install ffmpeg php-cli python-dev build-essential imagemagick
-apt-get install python-pip
+apt-get install -y ffmpeg php-cli python-dev build-essential python-pip poppler-utils sox libsox-fmt-mp3
 pip install --upgrade pip
 pip install gTTS
-apt-get install poppler-utils
-apt-get install sox libsox-fmt-mp3
 ```
 
 **Example**
