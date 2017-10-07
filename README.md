@@ -24,7 +24,7 @@ pip install --upgrade pip
 pip install gTTS
 pip install pyttsx
 wget https://github.com/Harumaro/pico-read-speaker/blob/improvement/output-folder-param/txt2wave.py
-apt-get install -y npm
+apt-get install -y npm xvfb
 npm install phantomjs
 ```
 
