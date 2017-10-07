@@ -45,6 +45,10 @@ ffmpeg -loop 1 -i /tmp/testimage.png -i /tmp/helloworld.mp3 -shortest -c:v libx2
 ffmpeg -i /tmp/video.mkv -vcodec copy -acodec copy /tmp/video.mp4
 ```
 
+**Espeak TTS**
+
+`espeak -v it -s 141 -p 23 -f testo.txt --stdout | ffmpeg -i - -ar 44100 -ac 2 -ab 192k -f mp3 testo7.mp3`
+
 **Grab website to frames and make video**
 
 `xvfb-run phantomjs test.js && ffmpeg -start_number 10 -i frames/frame_%02d.png -c:v libx264 -r 25 -pix_fmt yuv420p out5.mp4`
