@@ -1,6 +1,6 @@
-# Convert any file to mp4 video
+# Convert any file to video
 
-This can be a good start for your video marketing strategy.
+Any2Mp4 is a mix of open source snippets to quickly test automated video generation.
 
 **Requirements**
 
