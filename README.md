@@ -18,9 +18,13 @@ This can be a good start for your video marketing strategy.
 ```
 apt-get update
 apt-get install -y ffmpeg php-cli python-dev build-essential python-pip poppler-utils sox libsox-fmt-mp3
+apt-get install chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
 pip install --upgrade pip
 pip install gTTS
+apt-get install -y npm
 ```
+
+- [PhantomJS setup](https://gist.github.com/julionc/7476620)
 
 **Example**
 
@@ -41,7 +45,7 @@ ffmpeg -loop 1 -i /tmp/testimage.png -i /tmp/helloworld.mp3 -shortest -c:v libx2
 ffmpeg -i /tmp/video.mkv -vcodec copy -acodec copy /tmp/video.mp4
 ```
 
-- grab website to frames and make video
+**Grab website to frames and make video**
 
 `xvfb-run phantomjs test.js && ffmpeg -start_number 10 -i frames/frame_%02d.png -c:v libx264 -r 25 -pix_fmt yuv420p out5.mp4`
 
