@@ -17,16 +17,17 @@ Any2Mp4 is a mix of open source snippets to quickly test automated video generat
 
 ```
 apt-get update
-apt-get install -y ffmpeg php-cli python-dev build-essential python-pip poppler-utils sox libsox-fmt-mp3
+apt-get install -y ffmpeg php-cli python-dev build-essential python-pip poppler-utils sox libsox-fmt-mp3 unzip
+apt-get install -y libttspico0 libttspico-utils libttspico-data
 apt-get install chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
 pip install --upgrade pip
 pip install gTTS
+pip install pyttsx
+wget https://github.com/Harumaro/pico-read-speaker/blob/improvement/output-folder-param/txt2wave.py
 apt-get install -y npm
+npm install phantomjs
 ```
-
-- [PhantomJS setup](https://gist.github.com/julionc/7476620)
-
-**Example**
+**Examples**
 
 ```
 # create text file
@@ -38,7 +39,7 @@ gtts-cli -f /tmp/helloworld.txt -l 'en' -o /tmp/helloworld.mp3
 # create blank image
 convert -size 1280x720 xc:white /tmp/testimage.png
 
-# create video using blank image as background and the mp3 file as audio content
+# create video using that image as background and the mp3 file as audio content
 ffmpeg -loop 1 -i /tmp/testimage.png -i /tmp/helloworld.mp3 -shortest -c:v libx264 -c:a copy /tmp/video.mkv
 
 # convert mkv to mp4
