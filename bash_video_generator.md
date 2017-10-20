@@ -3,6 +3,7 @@
 ```
 #!/bin/bash
 
+# replace with your better random string if desired
 randomtext=`date | md5sum | cut -c 1-32`
 
 echo Titolo
