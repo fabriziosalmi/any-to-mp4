@@ -36,6 +36,8 @@ git clone https://github.com/agentzh/amazon-polly-batch/archive/master.zip && un
 
 ## Examples
 
+- [awscli](https://gist.github.com/anamorph/aaf8434d3bbad92059b3)
+
 - create text file
 `echo "Hello world" > /tmp/helloworld.txt`
 
