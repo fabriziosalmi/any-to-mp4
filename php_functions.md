@@ -1,8 +1,29 @@
-## Convert TXT to MP3 (txt2wav)
+
+
+## Convert TXT to MP3
+
+**Generate random string (32 chars)**
 
 ```
+// Source: https://stackoverflow.com/questions/4356289/php-random-string-generator
+
+function generateRandomString($length = 32) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+```
+
+**Convert TXT to MP3 (txt2wav)**
+
+```
+$random_string = generateRandomString();
+
 function txt2mp3($txt) {
-  $random_string = md5(md5(md5(rand(1,999999)."9973f9347f3".rand(999,999999)))); # si lo so fa paura..
   $filename = "_tmp_".$random_string.".txt";
   file_put_contents($filename, file_get_contents($txt));
   $cmd = "/usr/bin/python /var/www/html/txt2wav.py -i ".$filename." -l it-IT -o /var/www/html/storage/mp3";
@@ -10,8 +31,9 @@ function txt2mp3($txt) {
   $output_mp3 = "/var/www/html/storage/mp3/".str_replace(".txt", ".mp3", $filename);
   return $output_mp3;
 }
-```
 
+
+```
 
 ## Speed up mp3 file
 
