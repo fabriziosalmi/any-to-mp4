@@ -12,6 +12,9 @@ Any2Mp4 is a mix of open source snippets to quickly test automated video generat
 - [pdftotext](https://linux.die.net/man/1/pdftotext)
 - [Sox](http://sox.sourceforge.net/) with [mp3 support](https://superuser.com/questions/421153/how-to-add-a-mp3-handler-to-sox/421168)
 - [ImageMagick](https://www.imagemagick.org/script/index.php)
+- [AWS cli](https://aws.amazon.com/it/blogs/aws/polly-text-to-speech-in-47-voices-and-24-languages/)
+- [Amazon-Polly-Batch](https://github.com/agentzh/amazon-polly-batch)
+- Perl is required
 
 ## Setup
 
@@ -23,9 +26,12 @@ apt-get install -y chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev l
 pip install --upgrade pip
 pip install gTTS
 pip install pyttsx
+pip install awscli
+pip install boto3
 wget https://github.com/Harumaro/pico-read-speaker/blob/improvement/output-folder-param/txt2wave.py
 apt-get install -y npm xvfb
 npm install phantomjs
+git clone https://github.com/agentzh/amazon-polly-batch/archive/master.zip && unzip master.zip && cd amazon-polly-batch
 ```
 
 ## Examples
@@ -47,6 +53,9 @@ npm install phantomjs
 
 - Espeak TTS
 `espeak -v it -s 141 -p 23 -f testo.txt --stdout | ffmpeg -i - -ar 44100 -ac 2 -ab 192k -f mp3 testo7.mp3`
+
+- [convert txt to Amazon Polly MP3 TTS](https://github.com/fabriziosalmi/any-to-mp4/blob/master/txt2mp3_tts_amazon.md)
+
 
 ## Screenshots as frames
 
