@@ -1,4 +1,4 @@
-## Create video with TTS voice (bash)
+## Create HD video with TTS voice (bash)
 
 TTS voice by **txt2wav.py**
 
