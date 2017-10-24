@@ -1,4 +1,6 @@
-## Create video with bash
+## Create video with TTS voice (bash)
+
+TTS voice by **txt2wav.py**
 
 ```
 #!/bin/bash
