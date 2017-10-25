@@ -1,4 +1,4 @@
-## PhantomJS + xvfb + ffmpeg
+## Create movie from website with PhantomJS, xvfb and ffmpeg
 
 **Requirements**
 
