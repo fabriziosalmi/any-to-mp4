@@ -1,5 +1,12 @@
 ## Create slideshow from images
 
+### Requirements
+
+- ffmpeg
+- php
+
+### Example
+
 In this example script all images should be in the `slides` folder and named as `slide_%d.png` (slide_1.png, slide_2.png...)
 
 ```
