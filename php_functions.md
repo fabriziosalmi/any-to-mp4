@@ -1,6 +1,6 @@
-# Useful PHP snippets
+## PHP snippets
 
-## Convert TXT to MP3 (txt2wav)
+### Convert TXT to MP3 (txt2wav)
 
 ```
 $random_string = generateRandomString();
@@ -17,7 +17,7 @@ function txt2mp3($txt) {
 
 ```
 
-## Speed up mp3 file
+### Speed up mp3 file
 
 ```
 function mp3speed($mp3in, $mp3out, $speed) {
@@ -26,7 +26,7 @@ function mp3speed($mp3in, $mp3out, $speed) {
 }
 ```
 
-## Convert MP3 to MKV video
+### Convert MP3 to MKV video
 
 ```
 function mp32mkv($mp3, $mkv, $image) {
@@ -35,7 +35,7 @@ function mp32mkv($mp3, $mkv, $image) {
 }
 ```
 
-## Convert MKV video to MP4 video
+### Convert MKV video to MP4 video
 
 ```
 function mkv2mp4($mkv, $mp4) {
@@ -44,7 +44,7 @@ function mkv2mp4($mkv, $mp4) {
 }
 ```
 
-## Generate random string (32 chars)
+### Generate random string (32 chars)
 
 ```
 // Source: https://stackoverflow.com/questions/4356289/php-random-string-generator
