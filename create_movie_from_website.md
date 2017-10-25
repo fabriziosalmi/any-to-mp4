@@ -1,6 +1,6 @@
 ## PhantomJS + xvfb + ffmpeg
 
-**Setup**
+**Requirements**
 
 - xvfb
 - phantomjs
