@@ -36,24 +36,22 @@ git clone https://github.com/agentzh/amazon-polly-batch/archive/master.zip && un
 
 ## Examples
 
-- [awscli](https://gist.github.com/anamorph/aaf8434d3bbad92059b3)
-
-- create text file
+### create text file
 `echo "Hello world" > /tmp/helloworld.txt`
 
-- save an audio file using that text file as input
+### save an audio file using that text file as input
 `gtts-cli -f /tmp/helloworld.txt -l 'en' -o /tmp/helloworld.mp3`
 
-- create blank image
+### create blank image
 `convert -size 1280x720 xc:white /tmp/testimage.png`
 
-- create video using that image as background and the mp3 file as audio content
+### create video using that image as background and the mp3 file as audio content
 `ffmpeg -loop 1 -i /tmp/testimage.png -i /tmp/helloworld.mp3 -shortest -c:v libx264 -c:a copy /tmp/video.mkv`
 
-- convert mkv to mp4
+### convert mkv to mp4
 `ffmpeg -i /tmp/video.mkv -vcodec copy -acodec copy /tmp/video.mp4`
 
-- Espeak TTS
+### Espeak TTS
 `espeak -v it -s 141 -p 23 -f testo.txt --stdout | ffmpeg -i - -ar 44100 -ac 2 -ab 192k -f mp3 testo7.mp3`
 
-- [convert txt to Amazon Polly MP3 TTS](https://github.com/fabriziosalmi/any-to-mp4/blob/master/txt2mp3_tts_amazon.md)
+### [TXT to TTS with Amazon Polly](https://github.com/fabriziosalmi/any-to-mp4/blob/master/txt2mp3_tts_amazon.md)
