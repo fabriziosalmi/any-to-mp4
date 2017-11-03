@@ -1,6 +1,6 @@
 <?php
 // requirements: several packages
-// php-cli example: php any2mp4.php
+// php-cli example: php-cgi -f any2mp4.php text="Some random string."
 
 header('Content-type: text/html; charset=utf-8');
 
