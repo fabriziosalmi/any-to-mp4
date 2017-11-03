@@ -1,5 +1,5 @@
 <?php
-// requirements: ffmpeg, sox, aws-tts, php, phantomjs
+// requirements: ffmpeg, sox, aws-tts, php, phantomjs, webserver
 // example use: php-cgi -f any2mp4.php text="Some random string."
 
 header('Content-type: text/html; charset=utf-8');
