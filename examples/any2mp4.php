@@ -32,13 +32,13 @@ echo "STEP 4: convert txt to ssml.."."\n";
 exec("txt2ssml.pl ".$tweak_file." > ".$ssml_file);
 echo "STEP 5: convert ssml to mp3.."."\n";
 $output_mp3 = "/tmp/output.mp3";
-exec("ssml2mp3.py -o ".$output_mp3." --voice Giorgio ".$ssml_file);
+exec("ssml2mp3.py -o ".$output_mp3." --voice Giorgio ".$ssml_file); // --voice Carla (or others) to change sex and language
 echo "STEP 6: speed up mp3 file.."."\n";
 $final_mp3 = "/tmp/final.mp3";
-mp3speed($output_mp3, $final_mp3, "1.07");
+mp3speed($output_mp3, $final_mp3, "1.07"); // 1.07x shorter
 echo "STEP 7: create text snippets.."."\n";
 $file = file_get_contents($tweak_file);
-$width = 5;
+$width = 200; // change snap.php CSS style accordingly
 $marker = "\n";
 $wrapped = wordwrap($file, $width, $marker, true);
 $lines = explode($marker, $wrapped);
@@ -59,7 +59,7 @@ $snaps_count=exec("ls -la /tmp/snaps/snap*.txt | wc -l");
 
 for ($i=1; $i<=$snaps_count; $i++) {
 
- $gen_snaps="phantomjs screenshot.js https://website.domain.ext/snap.php?snap=".$i." /tmp/snaps/snap_".$i.".png";
+ $gen_snaps="phantomjs screenshot.js https://website.domain.ext/snap.php?snap=".$i." /tmp/snaps/snap_".$i.".png"; // change website.domain.ext to a working webserver
  exec($gen_snaps);
  echo "Slide: ".$i."\n";
 }
@@ -79,7 +79,8 @@ $output_video = "/tmp/".$randomString.".mp4";
 $gen_video="ffmpeg -hide_banner -loglevel panic -framerate 1/".$frame_lenght." -i /tmp/snaps/snap_%d.png -i ".$final_mp3." -c:v libx264 -c:a copy -shortest -r 30 -pix_fmt yuv420p ".$output_video;
 exec($gen_video);
 echo "STEP 11: clean up files.."."\n";
-exec("rm -rf /tmp/snaps/* /tmp/text_file.txt /tmp/tweak_file.txt /tmp/ssml_file.ssml /tmp/final.mp3 /tmp/output.mp3");
-echo "VIDEO: ".$output_video."\n";
+exec("cp ".$output_video." .");
+exec("rm -rf /tmp/snaps/* /tmp/text_file.txt /tmp/tweak_file.txt /tmp/ssml_file.ssml /tmp/final.mp3 /tmp/output.mp3 ".$output_video);
+echo "VIDEO: https://website.domain.ext/".str_replace("/tmp/", "", $output_video)."\n";
 
 ?>
