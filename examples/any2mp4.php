@@ -38,7 +38,7 @@ $final_mp3 = "/tmp/final.mp3";
 mp3speed($output_mp3, $final_mp3, "1.07");
 echo "STEP 7: create text snippets.."."\n";
 $file = file_get_contents($tweak_file);
-$width = 240;
+$width = 5;
 $marker = "\n";
 $wrapped = wordwrap($file, $width, $marker, true);
 $lines = explode($marker, $wrapped);
