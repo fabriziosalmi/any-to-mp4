@@ -10,6 +10,7 @@ Any2Mp4 is a mix of open source snippets to quickly test automated video generat
 - [Python Pip](https://pypi.python.org/pypi/pip)
 - [gTTS](https://github.com/pndurette/gTTS)
 - [pdftotext](https://linux.die.net/man/1/pdftotext)
+- [txt2wave](https://github.com/Harumaro/pico-read-speaker/blob/improvement/output-folder-param/txt2wave.py)
 - [Sox](http://sox.sourceforge.net/) with [mp3 support](https://superuser.com/questions/421153/how-to-add-a-mp3-handler-to-sox/421168)
 - [ImageMagick](https://www.imagemagick.org/script/index.php)
 - [AWS cli](https://aws.amazon.com/it/blogs/aws/polly-text-to-speech-in-47-voices-and-24-languages/)
@@ -35,7 +36,6 @@ git clone https://github.com/agentzh/amazon-polly-batch/archive/master.zip && un
 ```
 
 ## [Examples](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples)
-
 
 - [create video from website](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_movie_from_website)
 - [create video with TTS - gTTS](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_video_with_TTS_GoogleTTS)
