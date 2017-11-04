@@ -34,21 +34,21 @@ aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXX
 
 `pip install boto3` + `git clone https://github.com/agentzh/amazon-polly-batch`
 
-##### Conversion process
+#### Conversion process
 
-**Clean txt file and create ssml file**
+- Clean txt file and create ssml file
 
 `./tweak-txt.pl file.txt > file-new.txt` `./txt2ssml.pl -s medium file-new.txt > file-new.ssml`
 
 Possible speech rates are `x-slow`, `medium`, `fast`, and `x-fast`
 
-**Create mp3 from txt**
+- Create mp3 from txt
 
 `./ssml2mp3.py -o file.mp3 --voice Salli file-new.ssml`
 
 Italian voices are `Giorgio` and `Carla`.
 
-**Optional: speed up audio with sox and PHP**
+- Optional: speed up audio with sox
 
 ```
 function mp3speed($mp3in, $mp3out, $speed) {
@@ -59,7 +59,7 @@ function mp3speed($mp3in, $mp3out, $speed) {
 mp3speed("file.mp3", "file_speed_117.mp3", "1.17");
 ```
 
-##### PHP script
+**PHP script**
 
 ```
 <?php
