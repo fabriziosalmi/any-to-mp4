@@ -23,3 +23,4 @@
 - background.png
 - screenshot.js
 - snap.php
+- text_input.txt
