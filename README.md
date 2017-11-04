@@ -21,18 +21,11 @@ Any2Mp4 is a mix of open source snippets to quickly test automated video generat
 
 ```
 apt-get update
-apt-get install -y ffmpeg php-cli python-dev build-essential python-pip poppler-utils sox libsox-fmt-mp3 unzip
-apt-get install -y libttspico0 libttspico-utils libttspico-data espeak
-apt-get install -y chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
-pip install --upgrade pip
-pip install gTTS
-pip install pyttsx
-pip install awscli
-pip install boto3
-wget https://github.com/Harumaro/pico-read-speaker/blob/improvement/output-folder-param/txt2wave.py
-apt-get install -y npm xvfb
+apt-get install -y ffmpeg php-cli python-dev build-essential python-pip poppler-utils sox libsox-fmt-mp3 unzip libttspico0 libttspico-utils libttspico-data espeak chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev npm xvfb
+pip install gTTS pyttsx awscli boto3
 npm install phantomjs
-git clone https://github.com/agentzh/amazon-polly-batch/archive/master.zip && unzip master.zip && cd amazon-polly-batch
+wget https://github.com/Harumaro/pico-read-speaker/blob/improvement/output-folder-param/txt2wave.py
+git clone https://github.com/agentzh/amazon-polly-batch/archive/master.zip
 ```
 
 ## [Examples](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples)
