@@ -5,9 +5,9 @@
 - [create video with TTS - txt2wav](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_video_with_TTS_txt2wav)
 - [create video with TTS - polly](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/long_txt_to_video_with_TTS_polly)
 
-### Other examples
+## Other examples
 
-#### Create slideshow (ffmpeg + PHP)
+### Create slideshow (ffmpeg + PHP)
 
 ```
 <?php
@@ -16,9 +16,9 @@
   echo '<a href="https://YOUR_PHP_WEBSITE/tmp/slideshow.mp4?rel='.$random_query_string.'" target="_blank">https://YOUR_PHP_WEBSITE/tmp/slideshow.mp4</a>';
 ?>
 ```
-#### Text to TTS (Amazon Polly)
+### Text to TTS (Amazon Polly)
 
-##### Configure the AWS credentials 
+#### Configure the AWS credentials 
 
 File: `~/.aws/credentials`
 
@@ -30,25 +30,15 @@ aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXX
 
 **Note:** AWS region must be in US
 
-##### Download, setup and install
+#### Download, setup and install
 
-`pip install boto3`
-
-`git clone https://github.com/agentzh/amazon-polly-batch`
-
-`unzip master.zip && cd amazon-polly-batch`
+`pip install boto3` + `git clone https://github.com/agentzh/amazon-polly-batch`
 
 ##### Conversion process
 
-**Clean txt file**
+**Clean txt file and create ssml file**
 
-`./tweak-txt.pl file.txt > file-new.txt`
-
-**Create ssml file**
-
-`./txt2ssml.pl -s slow file-new.txt > file-new.ssml`
-
-**Voice speed (optional)**
+`./tweak-txt.pl file.txt > file-new.txt` `./txt2ssml.pl -s medium file-new.txt > file-new.ssml`
 
 Possible speech rates are `x-slow`, `medium`, `fast`, and `x-fast`
 
@@ -56,9 +46,9 @@ Possible speech rates are `x-slow`, `medium`, `fast`, and `x-fast`
 
 `./ssml2mp3.py -o file.mp3 --voice Salli file-new.ssml`
 
-**Note:** Italian voices are `Giorgio` and `Carla`
+Italian voices are `Giorgio` and `Carla`.
 
-**Optional: speed up with sox (PHP)**
+**Optional: speed up audio with sox and PHP**
 
 ```
 function mp3speed($mp3in, $mp3out, $speed) {
@@ -68,7 +58,6 @@ function mp3speed($mp3in, $mp3out, $speed) {
 
 mp3speed("file.mp3", "file_speed_117.mp3", "1.17");
 ```
-**Note:** `1.17` is a reasonable value for Amazon Polly (Giorgio voice, -57% file size)
 
 ##### PHP script
 
