@@ -4,10 +4,9 @@ This script will save 20 images from Pixabay to slides folder.
 
 ```
 <?php
-
-// change Pixabay API key with your own key
+$PIXABAY_API_KEY = "change Pixabay API key with your own key";
 $keyword = $_GET["keyword"];
-$url = "https://pixabay.com/api/?key=PIXABAY_API_KEY&q=".$keyword."&image_type=photo&pretty=true";
+$url = "https://pixabay.com/api/?key=$PIXABAY_API_KEY&q=".$keyword."&image_type=photo&pretty=true";
 $response = file_get_contents($url);
 $decoded = json_decode($response);
 $i = 1;
