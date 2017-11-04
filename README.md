@@ -30,6 +30,7 @@ git clone https://github.com/agentzh/amazon-polly-batch/archive/master.zip
 
 ## [Examples](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples)
 
+- [some PHP snippets](https://github.com/fabriziosalmi/any-to-mp4/blob/master/snippets.md)
 - [create video from website](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_movie_from_website)
 - [create video with TTS - gTTS](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_video_with_TTS_GoogleTTS)
 - [create video with TTS - txt2wav](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_video_with_TTS_txt2wav)
