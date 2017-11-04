@@ -21,7 +21,7 @@ function generateRandomString($length = 32) {
 
 echo "STEP 1: get item.."."\n";
 // text input or anything else here
-$txt = $_GET["text"];
+$txt = file_get_contents("text_input.txt");
 $text_file = "/tmp/text_file.txt";
 $tweak_file = "/tmp/tweak_file.txt";
 $ssml_file = "/tmp/ssml_file.ssml";
