@@ -34,9 +34,4 @@ npm install phantomjs
 git clone https://github.com/agentzh/amazon-polly-batch/archive/master.zip && unzip master.zip && cd amazon-polly-batch
 ```
 
-## Examples
-
-### Espeak TTS
-`espeak -v it -s 141 -p 23 -f text.txt --stdout | ffmpeg -i - -ar 44100 -ac 2 -ab 192k -f mp3 reading.mp3`
-
-### [TXT to TTS with Amazon Polly](https://github.com/fabriziosalmi/any-to-mp4/blob/master/txt2mp3_tts_amazon.md)
+## [Examples](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples)
