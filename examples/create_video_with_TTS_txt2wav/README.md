@@ -14,3 +14,7 @@ pip install pyttsx
 wget https://github.com/Harumaro/pico-read-speaker/blob/improvement/output-folder-param/txt2wave.py
 ln -s txt2wave.py /usr/bin/txt2wave.py
 ```
+
+### Run
+
+`./create_video.sh`
