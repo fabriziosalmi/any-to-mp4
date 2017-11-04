@@ -16,7 +16,7 @@ $filename = "slide_";
 foreach($decoded->hits as $id => $hit) {
 	$image = $hit->webformatURL;
 	$image_data = file_get_contents($image);
-	file_put_contents("slides/".$filename.$i.".jpg", $image_data);
+	file_put_contents("/tmp/slides/".$filename.$i.".jpg", $image_data);
 	$i++;
 }
 
