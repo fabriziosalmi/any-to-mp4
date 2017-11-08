@@ -10,12 +10,12 @@
 
 ### Requirements
 
-- ffmpeg
-- sox
-- aws-tts
 - php-cli, php-fpm
 - nginx
 - python
+- [ffmpeg](https://www.ffmpeg.org/)
+- [Sox](http://sox.sourceforge.net/) with [mp3 support](https://superuser.com/questions/421153/how-to-add-a-mp3-handler-to-sox/421168)
+- [amazon-polly-batch](https://github.com/agentzh/amazon-polly-batch)
 
 ### Files
 
