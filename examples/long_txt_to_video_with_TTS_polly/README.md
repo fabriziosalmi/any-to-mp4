@@ -1,4 +1,4 @@
-## Convert a long text file to video with TTS reading
+## Convert a text input to video with reading TTS
 
 ### Process
 
@@ -6,7 +6,7 @@
 - convert txt file to audio with TTS reading the text file content
 - convert as many chunks of text required to make 1280x720 html page with chunked text content
 - make a screenshot of each generated web page
-- make a video with TTS reading as audio synced with the slideshow of screenshots
+- make a video with TTS reading synced with the screenshots slideshow
 
 ### Requirements
 
