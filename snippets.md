@@ -124,3 +124,17 @@ foreach($decoded->hits as $id => $hit) {
   echo '<a href="https://YOUR_PHP_WEBSITE/tmp/slideshow.mp4?rel='.$random_query_string.'" target="_blank">https://YOUR_PHP_WEBSITE/tmp/slideshow.mp4</a>';
 ?>
 ```
+
+### Get Wikipedia item content
+
+```
+<?php
+$search_query = $_GET["query"];
+$api_query = "https://it.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&redirects=1&titles=".$search_query;
+$api_data = json_decode(file_get_contents($api_query), true);
+$api_text = ((object)reset($api_data['query']['pages']))->extract;
+$api_text = explode('Note', $api_text);
+$api_text = $api_text[0];
+print_r($api_text);
+?>
+```
