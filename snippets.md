@@ -1,5 +1,9 @@
 ## PHP snippets
 
+### Convert MP$ to WEBM
+
+`ffmpeg -i input.mp4 -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis output.webm`
+
 ### Convert TXT to MP3 (txt2wav)
 
 ```
