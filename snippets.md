@@ -1,5 +1,21 @@
 ## PHP snippets
 
+### Video watermark
+
+```
+function watermark($video_in, $watermark, $video_out) {
+  $ffmpeg = 'ffmpeg -i '.$video_in.' -i '.$watermark.' -filter_complex "overlay=x=(main_w-overlay_w)/2:y=(main_h-overlay_h)/2" '.$video_out;
+  exec($ffmpeg);
+}
+
+function watermark_sub($video_in, $watermark) {
+  $video_out = "/tmp/watermaking.mp4";
+  $ffmpeg = 'ffmpeg -i '.$video_in.' -i '.$watermark.' -filter_complex "overlay=x=(main_w-overlay_w)/2:y=(main_h-overlay_h)/2" '.$video_out;
+  exec($ffmpeg);
+  exec("cp -r /tmp/watermaking.mp4 ".$video_in);
+}
+```
+
 ### Convert MP4 to WEBM
 
 `ffmpeg -i input.mp4 -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis output.webm`
