@@ -13,6 +13,7 @@ function watermark_sub($video_in, $watermark) {
   $ffmpeg = 'ffmpeg -i '.$video_in.' -i '.$watermark.' -filter_complex "overlay=x=(main_w-overlay_w)/2:y=(main_h-overlay_h)/2" '.$video_out;
   exec($ffmpeg);
   exec("cp -r /tmp/watermaking.mp4 ".$video_in);
+  exec("rm -rf /tmp/watermaking.mp4");
 }
 ```
 
