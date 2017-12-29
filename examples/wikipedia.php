@@ -1,7 +1,14 @@
 <?php
 // get content from Wikipedia title: Wikipedia
 // paragraphs to use: 10
-// command: /usb/bin/php-cgi -f wikipedia.php query=Wikipedia pars=10
+// command: /usb/bin/php-cgi -f wikipedia.php query=Wikipedia pars=10 mode=waves
+
+$vmode = $_GET["mode"];
+
+if ($vmode != ("waves"||"image")) {
+  echo "ERROR: vmode is not valid. Log: ".$vmode."\n";
+  die();
+}
 
 $paragraphs = $_GET["pars"];
 $query = $_GET["query"];
@@ -44,6 +51,8 @@ $wiki_img = "tmp/wiki_".$hash.".png";
 $wiki_mp3 = "tmp/wiki_".$hash.".mp3";
 $wiki_mp4 = "tmp/wiki_".$hash.".mp4";
 $wiki_json = "tmp/wiki_".$hash.".json";
+$wiki_mkv = "tmp/wiki_".$hash.".mkv";
+
 
 file_put_contents($wiki_txt, $content);
 file_put_contents($wiki_img, $image_content_data);
@@ -64,8 +73,21 @@ exec("/usr/bin/perl txt2ssml.pl tmp/wiki2.txt > tmp/wiki.ssml");
 exec("/usr/bin/python ssml2mp3.py tmp/wiki.ssml -o ".$wiki_mp3);
 // alternatives: gtts-cli, txt2wav
 
-$ffmpeg = '/usr/bin/ffmpeg -hide_banner -loglevel error -i '.$wiki_mp3.' -filter_complex "[0:a]showwaves=s=1280x720:mode=line:rate=25,format=yuv420p[v]" -map "[v]" -map 0:a '.$wiki_mp4;
-exec($ffmpeg);
+if ($vmode == "waves") {
+  $ffmpeg = '/usr/bin/ffmpeg -hide_banner -loglevel panic -i '.$wiki_mp3.' -filter_complex "[0:a]showwaves=s=1280x720:mode=line:rate=25,format=yuv420p[v]" -map "[v]" -map 0:a '.$wiki_mp4;
+  exec($ffmpeg);
+}
+
+// to be fixed..
+if ($vmode == "image") {
+  $ffmpeg2 = '/usr/bin/ffmpeg -hide_banner -loglevel warning -i '.$wiki_mp3.' -i '.$wiki_img.' -shortest -c:v libx264 -c:a copy -pix_fmt yuv420p '.$wiki_mkv;
+  exec($ffmpeg2);
+  $ffmpeg3 = '/usr/bin/ffmpeg -hide_banner -loglevel warning -i '.$wiki_mkv.' -vcodec copy -acodec copy '.$wiki_mp4;
+  exec($ffmpeg3);
+  $ffmpeg_clean = 'rm -rf tmp/*.mkv';
+  exec($ffmpeg_clean);
+}
+
 
 var_dump($media);
 
