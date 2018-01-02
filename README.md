@@ -2,6 +2,15 @@
 
 Any2Mp4 is a mix of open source snippets to quickly test automated video generation.
 
+## [Examples](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples)
+
+- [some PHP snippets](https://github.com/fabriziosalmi/any-to-mp4/blob/master/snippets.md)
+- [create video from Wikipedia](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_video_from_Wikipedia)
+- [create video from a website](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_movie_from_website)
+- [create video with TTS - gTTS](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_video_with_TTS_GoogleTTS)
+- [create video with TTS - txt2wav](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_video_with_TTS_txt2wav)
+- [create video with TTS - polly](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/long_txt_to_video_with_TTS_polly)
+
 ## Requirements
 
 - [Debian 8](https://www.debian.org) or any other Linux flavour
@@ -27,11 +36,3 @@ npm install phantomjs
 wget https://github.com/Harumaro/pico-read-speaker/blob/improvement/output-folder-param/txt2wave.py
 git clone https://github.com/agentzh/amazon-polly-batch/archive/master.zip
 ```
-
-## [Examples](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples)
-
-- [some PHP snippets](https://github.com/fabriziosalmi/any-to-mp4/blob/master/snippets.md)
-- [create video from website](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_movie_from_website)
-- [create video with TTS - gTTS](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_video_with_TTS_GoogleTTS)
-- [create video with TTS - txt2wav](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/create_video_with_TTS_txt2wav)
-- [create video with TTS - polly](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples/long_txt_to_video_with_TTS_polly)
