@@ -1,4 +1,4 @@
-### Create MP3 file with TTS voice reading some Wikipedia page content
+### Wikipedia to MP3 converter (Amazon Polly TTS)
 
 **Example use**
 
