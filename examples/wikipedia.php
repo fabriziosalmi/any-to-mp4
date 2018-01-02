@@ -1,7 +1,7 @@
 <?php
 // get content from Wikipedia title: Wikipedia
 // paragraphs to use: 10
-// command: /usb/bin/php-cgi -f wikipedia.php query=Wikipedia pars=2 mode=waves
+// example: /usb/bin/php-cgi -f wikipedia.php query=Wikipedia pars=2 mode=waves
 
 $vmode = $_GET["mode"];
 
@@ -57,6 +57,11 @@ $wiki_mkv = "tmp/wiki_".$hash.".mkv";
 file_put_contents($wiki_txt, $content);
 file_put_contents($wiki_img, $image_content_data);
 
+// resize image
+$resize_image = ("/usr/bin/convert ".$wiki_img." -gravity center -background black -extent 1280x720 tmp/resized_image.png");
+exec($resize_image);
+exec("mv tmp/resized_image.png ".$wiki_img);
+
 $media = array();
 $media["title"] = $query;
 $media["content"] = $content;
@@ -81,9 +86,9 @@ if ($vmode == "waves") {
 if ($vmode == "image") {
   $ffmpeg2 = 'ffmpeg -loop 1 -i '.$wiki_img.' -i '.$wiki_mp3.' -shortest -tune stillimage -c:a aac -strict -2 -b:a 192k -pix_fmt yuv420p -shortest '.$wiki_mp4;
   exec($ffmpeg2);
-  $ffmpeg3 = 'ffmpeg -i '.$wiki_mp4.' -vf scale=1280:720 tmp/resized_video.mp4';
-  exec($ffmpeg3);
-  exec('/bin/mv tmp/resized_video.mp4 '.$wiki_mp4);
+//  $ffmpeg3 = 'ffmpeg -i '.$wiki_mp4.' -vf scale=1280:720 tmp/resized_video.mp4';
+//  exec($ffmpeg3);
+//  exec('/bin/mv tmp/resized_video.mp4 '.$wiki_mp4);
 }
 
 var_dump($media);
