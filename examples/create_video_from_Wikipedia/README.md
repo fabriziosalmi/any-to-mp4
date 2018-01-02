@@ -84,7 +84,7 @@ if ($vmode == "image") {
   $ffmpeg2 = 'ffmpeg -hide_banner -loglevel panic -loop 1 -i '.$wiki_img.' -i '.$wiki_mp3.' -shortest -tune stillimage -c:a aac -strict -2 -b:a 192k -pix_fmt yuv420p -shortest '.$wiki_mp4;
   exec($ffmpeg2);
 // video resize..  
-//  $ffmpeg3 = 'ffmpeg -i '.$wiki_mp4.' -vf scale=1280:720 tmp/resized_video.mp4';
+//  $ffmpeg3 = '/usr/bin/ffmpeg -i '.$wiki_mp4.' -vf scale=1280:720 tmp/resized_video.mp4';
 //  exec($ffmpeg3);
 //  exec('/bin/mv tmp/resized_video.mp4 '.$wiki_mp4);
   
