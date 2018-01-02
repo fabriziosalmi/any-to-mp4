@@ -3,7 +3,7 @@
 // example use: subject = Wikipedia, paragraphs = 10, video mode = waves
 // available video modes: waves, image (additional modes are in progress..)
 
-// cli command: /usb/bin/php-cgi -f wikipedia.php query=Wikipedia pars=10 mode=waves
+// cli command: /usb/bin/php-cgi -f wikipedia.php query=Wikipedia pars=2 mode=waves
 
 $vmode = $_GET["mode"];
 
@@ -89,5 +89,22 @@ if ($vmode == "image") {
 
 // logging to screen
 var_dump($media);
+
+// cli output example (same as json file content)
+// 
+// array(6) {
+//   ["title"]=>
+//   string(9) "Wikipedia"
+//   ["content"]=>
+//   string(406) "Wikipedia (pronuncia: vedi sotto) è un'enciclopedia online a contenuto libero, collaborativa, multilingue e gratuita, nata nel 2001, sostenuta e ospitata dalla Wikimedia Foundation, un'organizzazione non a scopo di lucro statunitense. Lanciata da Jimmy Wales e Larry Sanger il 15 gennaio 2001, inizialmente nell'edizione in lingua inglese, nei mesi successivi ha aggiunto edizioni in numerose altre lingue"
+//   ["image"]=>
+//   string(45) "tmp/wiki_6b71c8bcbf8b15e1c65196aeec16d776.png"
+//   ["mp3"]=>
+//   string(45) "tmp/wiki_6b71c8bcbf8b15e1c65196aeec16d776.mp3"
+//   ["mp4"]=>
+//   string(45) "tmp/wiki_6b71c8bcbf8b15e1c65196aeec16d776.mp4"
+//   ["json"]=>
+//   string(46) "tmp/wiki_6b71c8bcbf8b15e1c65196aeec16d776.json"
+// }
 
 ?>
