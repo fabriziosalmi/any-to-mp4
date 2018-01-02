@@ -1,16 +1,19 @@
 ### Create video from Wikipedia page
 
-Automagically create video with a given number of Wikipedia page content paragraphs
-Paragraphs: 1 to unlimited
-TTS voice: Amazon Polly
+Automagically create video with a given number of Wikipedia page content paragraphs.
 
-**PHP**
+**Example uses**
+
+- `/usb/bin/php-cgi -f script.php query=Wikipedia pars=2 mode=waves`
+- `/usb/bin/php-cgi -f script.php query=Wiki Media pars=20 mode=image`
+
+**PHP script**
 
 ```
 <?php
 // get content from Wikipedia title: Wikipedia
 // paragraphs to use: 10
-// example: /usb/bin/php-cgi -f wikipedia.php query=Wikipedia pars=2 mode=waves
+// 
 $vmode = $_GET["mode"];
 if ($vmode != ("waves"||"image")) {
   echo "ERROR: vmode is not valid. Log: ".$vmode."\n";
