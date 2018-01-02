@@ -1,6 +1,6 @@
-### Create audio file with Espeak TTS voice
+### Create audio file with eSpeak TTS voice
 
-**shell**
+**shell script**
 
 ```
 echo "Buongiorno a tutti" > content.txt
