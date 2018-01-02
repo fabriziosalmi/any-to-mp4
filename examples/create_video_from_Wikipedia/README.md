@@ -70,7 +70,7 @@ $media["image"] = $wiki_img;
 $media["mp3"] = $wiki_mp3;
 $media["mp4"] = $wiki_mp4;
 $media["json"] = $wiki_json;
-file_put_contents($wiki_json, $media);
+file_put_contents($wiki_json, json_encode($media));
 // text to mp3 (Amazon Polly)
 exec("/usr/bin/perl tweak-txt.pl ".$wiki_txt." > tmp/wiki2.txt");
 exec("/usr/bin/perl txt2ssml.pl tmp/wiki2.txt > tmp/wiki.ssml");
