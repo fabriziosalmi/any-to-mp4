@@ -1,6 +1,6 @@
-# How to convert text content to MP3 audio and MP4 video files
+# How to convert any content to MP3 or MP4 with Linux
 
-Any2Mp4 is a mix of open source snippets to quickly test automated video generation.
+Any2Mp4 is a mix of open source snippets to quickly test automated audio or video generation.
 
 ## [Examples](https://github.com/fabriziosalmi/any-to-mp4/tree/master/examples)
 
