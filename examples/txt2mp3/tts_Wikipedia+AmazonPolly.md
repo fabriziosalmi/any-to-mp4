@@ -11,7 +11,7 @@ array(4) {
   ["title"]=>
   string(9) "Wikipedia"
   ["content"]=>
-  string(210) "Wikipedia è un'enciclopedia online a contenuto libero, collaborativa, multilingue e gratuita, nata nel 2001, sostenuta e ospitata dalla Wikimedia Foundation, un'organizzazione non a scopo di lucro statunitense"
+  string(210) "Wikipedia è un'enciclopedia online a contenuto libero, collaborativa, multilingue e gratuita, nata nel 2001, sostenuta e ospitata dalla Wikimedia Foundation, un'organizzazione non a scopo di lucro statunitense."
   ["mp3"]=>
   string(45) "tmp/wiki_0c341ac27ec3562ece384ddaa915b211.mp3"
   ["json"]=>
@@ -58,6 +58,10 @@ $a = explode(". ", $content);
 $a = array_slice($a, 0, $paragraphs);
 $content = implode('. ', $a);
 $content = str_replace("  ", " ", $content);
+// any word after last "." is removed
+$content_arr = explode(". ", $content);
+array_pop($content_arr);
+$content = implode(". ", $content_arr).".";
 
 // hash and filenames
 $hash = md5(rand(0,99999999)."fhoweufwe");
@@ -80,6 +84,14 @@ exec("/usr/bin/perl txt2ssml.pl tmp/wiki2.txt > tmp/wiki.ssml");
 exec("/usr/bin/python ssml2mp3.py tmp/wiki.ssml -o ".$wiki_mp3);
 // TTS options: gtts-cli, txt2wav, espeak
 
+// output data
 var_dump($media);
+
+// funny stuff
+unset($content_arr);
+unset($media);
+unset($content);
+unset($query);
+
 ?>
 ```
