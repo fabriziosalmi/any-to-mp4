@@ -80,9 +80,15 @@ file_put_contents($wiki_json, json_encode($media));
 
 // text to mp3 (Amazon Polly)
 exec("/usr/bin/perl tweak-txt.pl ".$wiki_txt." > tmp/wiki2.txt");
-exec("/usr/bin/perl txt2ssml.pl tmp/wiki2.txt > tmp/wiki.ssml");
+exec("/usr/bin/perl txt2ssml.pl -s fast tmp/wiki2.txt > tmp/wiki.ssml");
 exec("/usr/bin/python ssml2mp3.py tmp/wiki.ssml -o ".$wiki_mp3);
 // TTS options: gtts-cli, txt2wav, espeak
+
+// speed up mp3
+$temp_mp3 = "tmp/mp3_speed.mp3";
+exec("cp ".$wiki_mp3." ".$temp_mp3);
+$mp3speed = "/usr/bin/sox ".$temp_mp3. " ".$wiki_mp3." tempo 1.15";
+exec($mp3speed);
 
 // output data
 var_dump($media);
