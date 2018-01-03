@@ -19,6 +19,13 @@ array(4) {
 }
 ```
 
+**Next features**
+
+- input formats (txt, json)
+- security (network, input)
+- lexicon for better readings
+- multiple outputs (mp4, html, images)
+
 **wikitts.php**
 
 ```
