@@ -26,3 +26,10 @@ npm install phantomjs
 wget https://github.com/Harumaro/pico-read-speaker/blob/improvement/output-folder-param/txt2wave.py
 git clone https://github.com/agentzh/amazon-polly-batch/archive/master.zip
 ```
+
+## All-in-one? Yes, virtualized!
+
+I'm going to release a virtual machine to let you test all scripts and make automated videos on your own. You will need VirtualBox and nothing else to run the first release.
+If you want to collaborate just [write me](mailto:fabrizio.salmi@gmail.com).
+
+Requirements: 64bit OS (Windows 7, 8, 10, Mac OSX, GNU/Linux), 1GB ram, 3GB free drive space.
